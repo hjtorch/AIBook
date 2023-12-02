@@ -3,7 +3,7 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 app.get("/", function(req, res) {
-  res.render('pages/index');
+  res.render('main');
 });
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
