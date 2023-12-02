@@ -2,11 +2,7 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.set('view engine', 'ejs');
-
-app.get("/", function(req, res) {
-  res.render('main');
-});
+app.get("/", (req, res) => res.type('html').sendFile('main.html');
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
