@@ -22,13 +22,6 @@ function getUsers(client){
     return users_collection.find();
 }
 
-async function listDatabases(client){
-    databasesList = await client.db().admin().listDatabases();
- 
-    console.log("Databases:");
-    databasesList.databases.forEach(db => console.log(` - ${db.name}`));
-};
-
 DBConnection().catch(console.error);
 
 app.set('views', __dirname);
