@@ -14,9 +14,11 @@ async function DBConnection(client) {
         await client.connect();
     } catch (e) {
         console.error(e);
-    } finally {
-        await client.close();
     }
+    
+    //finally {
+    //    await client.close();
+    //}
 }
 
 function getUsers(client){
