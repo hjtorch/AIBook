@@ -1,1 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<body class="container">
 
+<main>
+  <div class="jumbotron">
+    <h1>This is great</h1>
+    <p>Welcome to templating using EJS</p>
+
+    <h2>Variable</h2>
+
+    <ul>
+      <% users.forEach(function(user) { %>
+        <li>
+          <strong><%= user.user_name %></strong>
+        </li>
+      <% }); %>
+    </ul>
+  </div>
+</main>
+
+</body>
+</html>
