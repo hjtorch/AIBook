@@ -5,20 +5,21 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 // Connect to DB 
-async function DBConnection(){
-    const uri = "mongodb://mongodb-1948:27017";
-    const client = new MongoClient(uri);
-    try {
-        // Connect to the MongoDB cluster
-        await client.connect();
-        // Make the appropriate DB calls
-        await  listDatabases(client);
-    } catch (e) {
-        console.error(e);
-    } finally {
-        await client.close();
-    }
+const uri = "mongodb://mongodb-1948:27017";
+const client = new MongoClient(uri);
+try {
+    // Connect to the MongoDB cluster
+    await client.connect();
+} catch (e) {
+    console.error(e);
+} finally {
+    await client.close();
 }
+
+async function getUsers(client){
+    
+}
+
 async function listDatabases(client){
     databasesList = await client.db().admin().listDatabases();
  
