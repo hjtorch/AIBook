@@ -16,8 +16,10 @@ try {
     await client.close();
 }
 
-async function getUsers(client){
-    
+function getUsers(client){
+    const database = client.db("BIXI_MAIN");
+    const users_collection = database.collection("users");
+    return users_collection.find();
 }
 
 async function listDatabases(client){
