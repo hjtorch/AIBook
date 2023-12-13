@@ -7,13 +7,16 @@ const port = process.env.PORT || 3001;
 // Connect to DB 
 const uri = "mongodb://mongodb-1948:27017";
 const client = new MongoClient(uri);
-try {
-    // Connect to the MongoDB cluster
-    await client.connect();
-} catch (e) {
-    console.error(e);
-} finally {
-    await client.close();
+
+async function DBConnection(client) {
+    try {
+        // Connect to the MongoDB cluster
+        await client.connect();
+    } catch (e) {
+        console.error(e);
+    } finally {
+        await client.close();
+    }
 }
 
 function getUsers(client){
@@ -22,7 +25,7 @@ function getUsers(client){
     return users_collection.find();
 }
 
-DBConnection().catch(console.error);
+DBConnection(client).catch(console.error);
 
 app.set('views', __dirname);
 app.engine('html', require('ejs').renderFile);
