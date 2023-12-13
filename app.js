@@ -36,7 +36,10 @@ app.set('view engine', 'ejs');
 app.get("/", (req, res) => res.render('main.html'));
 app.get("/story", (req, res) => res.render('story.html'));
 app.get("/auth", function(req, res) {
-    res.render('auth.ejs', { users : getUsers(client) })
+    var users = getUsers(client)
+    console.log("users:")
+    console.log(users)
+    res.render('auth.ejs', { users : users })
 });
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
