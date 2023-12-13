@@ -34,6 +34,7 @@ app.set('view engine', 'ejs');
 
 app.get("/", (req, res) => res.render('main.html'));
 app.get("/story", (req, res) => res.render('story.html'));
+app.get("/auth", (req, res) => res.render('auth.html'));
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
